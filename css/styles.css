@@ -1,0 +1,902 @@
+
+@import url(reset.css);
+
+* 
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+#follower{
+  position : absolute;
+  z-index: 10000;
+  background-color : #000000;
+  background: url(../img/ellipse7-2.png) no-repeat center top / cover; 
+  background: url(../img/ellipse10.png) no-repeat center top / cover;
+
+  filter: blur(13px);
+  opacity: 0.77;
+  width:50px;
+  height:50px; /* Размеры движущегося объекта */
+  border-radius:50px;
+}
+#follower2{
+  position : absolute;
+  z-index: 9000;
+  background-color : #000000;
+  background: url(../img/ellipse10.png) no-repeat center top / cover;
+  background: url(../img/ellipse7-2.png) no-repeat center top / cover; 
+
+  filter: blur(20px);
+  opacity: 0.57;
+  width:75px;
+  height:75px; /* Размеры движущегося объекта */
+  border-radius:50px;
+  transition: all 1.5s ease-out 0s;
+}
+.move-wrap {
+  width:150px;
+  height:150px; /* Размеры области, в которой будет двигаться объект */
+  position: relative;
+  overflow:hidden;
+  border:1px solid #000000;
+}
+
+html
+{
+	scroll-behavior: smooth; 
+}
+body
+{
+	position: relative;
+	background: #000000;
+	color: #ffffff;
+	font-family: "Proxima Nova", Arial, sans-serif ;
+	font-size: 1.0rem;
+}
+
+.transitionEachRowWrapper
+{
+	position: relative;
+	overflow: hidden;
+}
+.transitionEachRowText
+{
+	position: absolute;
+	transition: all 2s ease-in 0s ;
+	/*	-webkit-transition: all 1s ease-in 0s ;
+	-moz-transition: all 1s ease-in 0s ;
+	-ms-transition: all 1s ease-in 0s ;
+	-o-transition: all 1s ease-in 0s ;*/
+}
+.OverlayTransitionContent
+{
+	position:relative;
+	overflow:hidden;
+}
+.block_sticky{
+	position: sticky;
+}
+.wrapper{
+	padding: 0 5.2% 0 5.6%;
+}
+.content{
+	max-width: 1843px;
+	padding: 0 2.5%;
+	margin: 0 auto;
+}
+.section.line{
+	max-width: 1843px;
+	margin: 0 auto;
+	border-top: 1px solid #606060;
+}
+.section .header,
+.section .tr
+{
+	display: flex;
+	justify-content: space-between;
+}
+.section .table .td:first-child{
+	margin-left: 18.05%;
+}
+.section.header h2, 
+.section.header .sub_h2,
+.td
+{
+	width: 36.9%;
+}
+.section.header h2
+{
+	margin-left: 18.05%;
+	font-family: 'proxima nova', Arial, sans-serif;
+	font-size: 4rem;
+	font-weight: bold;
+}
+.header .sub_h2 {
+	font-family: 'proxima nova', Arial, sans-serif;
+	font-size: 1.5rem;
+}
+
+
+/*HEADER...........................................................*/
+
+/*HEADER header-top................................................*/
+
+.header_top_wrapper{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	align-items: center;
+	padding: 1.5% 0 ;
+	padding: 1.5% 5.2% 3rem 5.6%;
+	overflow: hidden;
+	background: #000000;
+	min-height: 7.5rem;
+	box-shadow: 0 0 25px rgba(0,0,0,1.0), 0 0 20px rgba(0,0,0,1.0), 0 0 15px rgba(0,0,0,1.0), 0 0 10px rgba(0,0,0,1.0);		
+}
+.header_top_wrapper .content{
+	border-top: 1px solid #606060;
+	border-bottom: 1px solid #606060;
+}
+.header-top{
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	min-height: 4.5rem;
+	transition: justify-content 0s ease 3s;
+}
+.header-top .logo{
+	margin: 0;
+	padding: 0;
+	border: none ;
+	margin: 1.2rem 0 ;
+	margin-right: 15.0%;
+}
+.header-top .info-portfolio-and-contacts{
+	margin: 1.2rem 0;
+	margin-left: auto;
+	padding-left:1rem;
+}
+.header-top .logo #logo_info{
+	display: flex;
+	align-items: center;
+	margin-top: 0rem;
+	margin-left: 2.25rem;
+}
+#stand_with_Ukraine{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1.2rem 0;
+	font-size: 1.25rem;
+	transition: all ease 2s;
+}
+.yellow_text{
+	color: #FCCE0D;
+	font-size:  1.25rem;
+	font-family: 'misto', Arial, sans-serif;
+}
+.blue_text{
+	color: #0C7EF0;
+	font-size:  1.25rem;
+	font-family: 'Misto', Arial, sans-serif;
+}
+.ellipse10{
+	width: 55.6rem;
+	height: 63.2rem;
+	background: url(../img/ellipse10.png)  no-repeat center top / cover;
+	position: absolute;
+	left: -28rem;
+	bottom: -2.5rem;
+	z-index: -1;
+	opacity: 0.96;
+	filter: blur(10px);
+}
+.ellipse7{
+	width: 55rem;
+	height: 70rem;
+	background: url(../img/ellipse7-2.png)  no-repeat center top / cover;
+	position: absolute;
+	left: -10rem;
+/*	left: -40rem;*/
+	bottom: -4rem;
+	z-index: -1.5;
+	filter: blur(30px);
+	opacity: 0.97;
+}
+.ellipse8{
+	width: 55rem;
+	height: 70rem;
+	background: url(../img/ellipse7-2.png)  no-repeat center top / cover;
+	position: absolute;
+/*	left: 7rem;*/
+	left: -60rem;
+	bottom: -4rem;
+	z-index: -1.5;
+	filter: blur(30px);
+	opacity: 0.97;
+}
+
+
+/*HEADER logo................................................*/
+
+#logo_wrapper{
+	height: 3.5rem;
+	padding: 0 5.2% 0 5.6%;
+	margin-top: 5rem;
+}
+.logo{
+	display: flex;
+	flex-direction: column;
+	max-width: 1716px;
+	margin: 0 auto;
+}
+.logo_main_text{
+	display: flex;
+	align-items: center;
+}
+.logo_main_text img{
+	width: 18.75rem;
+}
+#logo_info {
+	display: flex;
+	align-items: center;
+	width: 7.94rem;
+	margin-top: 1.26rem;
+}
+#logo_info img{
+	width: 7.94rem;
+}
+
+/*HEADER header-middle................................................*/
+
+
+header {
+	margin-top: 9.44rem;
+}
+
+header h1{
+	margin-left: 18.05%;
+	font-size:  4.38rem;
+	font-family: 'Proxima Nova', Arial, sans-serif;
+	font-weight: bold;
+}
+header .sub-h1{
+	margin-left: 18.05%;
+	font-size:  1.88rem;
+	font-family: 'Marcellus', Arial, sans-serif;
+	margin-top: 3.81rem;
+}
+
+/*MAIN..............................................................*/
+/*SECTION Our-services..............................................*/
+.ellipse9{
+	width: 65rem;
+	height: 70rem;
+	background: url(../img/ellipse7-2.png)  no-repeat center top / cover;
+	position: absolute;
+/*	left: 7rem;*/
+	left: -30rem;
+/*	bottom: -40rem;*/
+	z-index: -1.5;
+	filter: blur(50px);
+	opacity: 0.57;
+}
+.ellipse11{
+	width: 55.6rem;
+	height: 63.2rem;
+	background: url(../img/ellipse10.png)  no-repeat center top / cover;
+	position: absolute;
+	left: -28rem;
+	top: -9.5rem;
+	z-index: -1;
+	opacity: 0.76;
+	filter: blur(50px);
+}
+.section.our-services.wrapper {
+	padding-top: 10.69rem;
+	position: relative;
+}
+.section.our-services.thead.tr {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-left: 18.05%;
+	margin-bottom: 3.0rem;
+	border-top: none;
+	padding: 0;
+}
+h2.what-we-do{
+	font-family: 'Proxima Nova', Arial, sans-serif;
+	font-size: 1.25rem;
+}
+.info-portfolio-and-contacts{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 19.44rem;
+	font-size:  1.25rem;
+	font-weight: bold;
+	font-family: 'proxima nova', Arial, sans-serif;
+}
+.info-portfolio-and-contacts a{
+	color:#ffffff;
+	text-decoration: none;
+	transition: all ease 300ms;
+}
+body .section.our-services.tr{
+	display: flex;
+	padding-top: 5.5rem;
+	padding-bottom: 10.5rem;
+	display: flex;
+	border-top: 1px solid #606060;
+}
+.our-services.tr .td:first-child{
+	width: 18.05%;
+	font-size: 1.5rem;
+	font-family: merriweather, Arial, sans-serif;
+	font-style: italic;
+	opacity: 0.5;
+}
+.our-services .td:nth-child(2){
+	width: 32.4%;
+	width: 36.9%;
+	font-size: 3.75rem;
+	font-family: 'proxima nova', Arial, sans-serif;
+}
+.our-services .td:nth-child(3){
+	margin-left: auto;
+	width: 36.9%;
+	font-size: 1.5rem;
+	font-family: 'proxima nova', Arial, sans-serif;
+}
+
+/*MAIN SECTION Our-advantages..........................................*/
+
+.our-advantages{
+	position: sticky;
+	z-index: 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 9rem;
+	padding-bottom: 9rem;
+	width: 100%;
+	overflow: hidden;
+	border-top: 1px solid #606060;
+}
+.our-advantages .advantage-wrapper{
+/*	display: flex;*/
+	width: 20rem;
+/*	align-items: flex-end;*/
+	color: #a0a0a0;
+}
+.our-advantages
+ .advantage-wrapper.active
+ {
+/*	display: flex;*/
+/*	width: 20rem;*/
+/*	align-items: flex-end;*/
+	color: #FFFFFF;
+/*	color: red;*/
+}
+.our-advantages .advantage-wrapper .head {
+	display: flex;
+	width: 20rem;
+    justify-content: flex-end;
+	align-items: center;
+/*	color: #a0a0a0;*/
+}
+.our-advantages 
+.advantage-wrapper 
+.head 
+h3
+{
+	display: flex;
+  align-items: flex-start;
+	justify-content: flex-start ;
+}
+.our-advantages .plus{
+	font-family: marcellus, Arial, sans-serif;
+	font-size: 3.75rem;
+	margin-right: 1.5rem;	
+}
+.our-advantages .advantage-name{
+/*	display: flex;*/
+/*	justify-content: flex-start;*/
+/*	align-items: flex-start;*/
+/*	margin-left: 1.5rem;*/
+	font-family: marcellus, Arial, sans-serif;
+	font-size: 2.5rem;
+	line-height: 1.3;
+}
+.our-advantages
+.advantage-wrapper 
+.body
+p
+{
+	display: none;
+	margin-top: 1rem;
+	text-align: left;
+}
+.our-advantages
+.advantage-wrapper 
+.body
+p.visible
+{
+	display: block;
+}
+
+/*SECTION About us..........................................*/
+
+.section.About_us.wrapper 
+{
+    position: sticky;
+    z-index: 1;
+    padding-top: 8.375rem;
+    padding-bottom: 8.375rem;
+/*    background: #000000;*/
+}
+.section.About_us.wrapper 
+.body
+{
+	display: flex;
+	justify-content: space-between;
+/*	 flex-wrap: wrap;*/
+	 margin-top: 4rem;
+/*	overflow: hidden;*/
+/*	width:30%;*/
+}
+.section.About_us.wrapper 
+.body
+.employee_wrapper
+{
+	width:26rem;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	margin-top: 4rem;
+}
+.section.About_us.wrapper 
+.body
+.employee_wrapper
+.OverlayTransitionContent
+{
+/*	position: ;*/
+/*	top:0px;*/
+/*	left:0px;*/
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+}
+.section.About_us.wrapper 
+.body
+.employee_wrapper
+.OverlayTransitionContent
+.OverlayTransition
+{
+/*	position: ;*/
+/*	top:0px;*/
+/*	left:0px;*/
+/*z-index: 11;*/
+/*	width: 90%;*/
+/*	height: 100%;*/
+}
+.section.About_us.wrapper 
+.body
+.employee_wrapper
+.foto_wrapper
+{
+	overflow: hidden;
+	width:90%;
+	position: relative;
+	height:34rem;
+}
+.section.About_us.wrapper 
+.body
+.employee_wrapper:nth-child(1)
+.foto_wrapper
+img
+{
+	/*position: absolute;
+	bottom: 0px;
+	width:190%;*/
+	height:34rem;
+}
+.section.About_us.wrapper 
+.body
+.employee_wrapper:nth-child(1)
+.foto_wrapper
+img
+{
+	position: absolute;
+	bottom: 0px;
+	width:190%;
+/*	height:34rem;*/
+}
+.section.About_us.wrapper 
+.body
+.employee_wrapper:nth-child(2)
+.foto_wrapper
+img
+{
+	position: absolute;
+	bottom: 0px;
+	width:100%;
+/*	height: 100%;*/
+/*	height:34rem;*/
+}
+.section.About_us.wrapper 
+.body
+.employee_wrapper:nth-child(3)
+.foto_wrapper
+img
+{
+	position: absolute;
+	bottom: 0px;
+	width:110%;
+/*	height: 100%;*/
+/*	height:34rem;*/
+}
+.section.About_us.wrapper 
+.body
+.employee_wrapper
+.gradient
+{
+	position: absolute;
+	height: 90%;
+	width: 100%;
+	bottom: 0px;
+	background: linear-gradient(
+		-175deg, rgba(255,255,255,0 ) 0.00%, 
+		 rgba(255,255,255,0) ,
+/*		#FCCC0C 100.00%*/
+/*		#0078D4 100.00%*/
+/*		#1D6198 100.00%*/
+		#B19614 100.00%
+
+	);
+}
+.section.About_us.wrapper 
+.body
+.employee_wrapper
+.gradient
+img
+{
+	position: absolute;
+	height: 90%;
+	width: 100%;
+	bottom: 0px;
+	/*background: linear-gradient(-175deg, rgba(255,255,255,0 ) 0.00%, 
+#FCCC0C 100.00%);*/
+}
+.section.About_us.wrapper 
+.body
+.info_wrapper
+{
+	position: absolute;
+	bottom: 2rem;
+	left: 0px;
+	z-index: 2;
+	width: 100%;
+
+}
+.section.About_us.wrapper 
+.body
+.info_wrapper
+h3
+{
+	font-family: "Marcellus", Arial, sans-serif;
+font-size: 2.5rem;
+}
+.section.About_us.wrapper 
+.body
+.info_wrapper
+.sub_h3
+{
+/*	font-family: "Proxima Nova";*/
+font-size: 1.25rem;
+line-height: 2.2rem;
+}
+
+/*SECTION projects..........................................*/
+
+.section.projects. .content{
+	border-top: 1px solid #606060;
+}
+.section.projects.header.wrapper{
+	padding-top: 9.0rem;
+	background: #000000;
+}
+.section.projects.slider_wrapper{
+	position: sticky;
+	z-index: 1;
+	padding-bottom: 5.75rem;
+	padding-top: 7.5rem;
+	background: #000000;
+}
+.section.projects.slider_wrapper .content{
+	max-width: 1920px;
+	margin: 0 auto;
+}
+.section.projects .slider .project h4{
+	margin-top: 2.75rem;
+	margin-left: 12.22%;
+	font-family: 'proxima nova', Arial, sans-serif;
+	font-size: 2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.section.projects .slider .project .info{
+	width: 53.10%;
+	margin-top: 1.75rem;
+	margin-left: 12.22%;
+	font-family: 'marcellus', Arial, sans-serif;
+	font-size: 1.5rem;
+}
+
+/*MAIN SECTION Tell us about  your project.................................*/
+
+.section.tell_about_your_project.line
+{
+	position: relative;
+	z-index: 1;
+}
+
+.section.tell_about_your_project.wrapper
+{
+	position: sticky;
+	z-index: 1;
+	padding-top: 8.375rem;
+	padding-bottom: 8.375rem;
+	background: #000000;
+}
+.section.tell_about_your_project .table.yourInfo 
+{
+	margin-top: 7.375rem;
+}
+.section.tell_about_your_project .table.yourInfo h5 {
+	display: flex;
+	align-items: center;
+	margin-right: 0.7rem;
+	font-family: 'proxima nova', Arial, sans-serif;
+	font-size: 1.5rem;
+	color:grey ;
+	opacity: 0.34530800580978394;
+}
+.section.tell_about_your_project .table.yourInfo .td {
+	border-bottom: 1px solid #606060;
+}
+.section.tell_about_your_project .table.yourInfo 
+.tr:first-child .td {
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	justify-content: space-between;
+}
+.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(1) .td
+{
+	padding-bottom: 2.1875rem;
+	border-bottom: 1px solid #606060;
+}
+.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(1) input {
+	width: 100%;
+	height: 2.0rem;
+	margin-top: 1.5rem;
+	background: #000000;
+	color: #ffffff;
+	font-family: 'proxima nova', Arial, sans-serif;
+	font-size: 2rem;
+	font-weight: 400;
+	outline: none;
+}
+.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(2) {
+	margin-top: 7rem;
+}
+.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(2) .td:nth-child(1) .inputBudgetAndShowInfo{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1.5rem;
+}
+.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(2) .td:nth-child(1) 
+.inputBudgetAndShowInfo
+input{
+	width:70%; 
+}
+.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(2) .td:nth-child(1) 
+.inputBudgetAndShowInfo
+input::-webkit-slider-thumb
+{
+/*	color:red;*/
+/*	background: green;*/
+
+}
+
+
+
+
+.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(2) .td:nth-child(2) 
+textarea{
+	margin-top: 1.5rem;
+	width: 100%;
+	margin-bottom: 2.1rem;
+	resize: none;
+	background: #000000;
+	color: #ffffff;
+	font-family: 'proxima nova', Arial, sans-serif;
+	font-size: 2rem;
+	outline: none;
+	font-weight: 400;
+}
+.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(3) .td{
+	border: none;
+}
+.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(3) 
+{
+	margin-top: 5.2rem;
+}
+.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(3) button{
+	width: 22rem;
+	height: 7.5rem;
+	font-family: 'proxima nova', Arial, sans-serif;
+	font-size: 1.25rem;
+	color:#FFFFFF;
+/*	background: #181818;*/
+	background:#7A5F06;
+	 opacity: 0.55;
+/*	 background: #FCCE0D;*/
+	 background: #ECC849;
+}
+/*.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(3)
+ button:link
+{
+	background: #FCCE0D;
+}*/
+.section.tell_about_your_project .table.yourInfo 
+.tr:nth-child(3)
+ button:active
+{
+/*	background:#7A5F06;*/
+	background: #ffffff;
+	opacity: 0.09;
+}
+
+
+/*MAIN SECTION Contact US.................................*/
+
+.section.Contact_US.wrapper{
+	position: sticky;
+	z-index: 1;
+	padding-top: 8.375rem;
+	padding-bottom: 8.375rem;
+	font-family: 'proxima nova', Arial, sans-serif;
+	overflow: hidden;
+}
+.section.Contact_US.header  h2{
+	font-size: 4rem;
+	font-weight: bold;
+}
+.section.Contact_US .table.our_contacts {
+	margin-top: 7.375rem;
+}
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(1) .item:first-child  {
+	height:2.1rem;
+}
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(1) .item:nth-child(2) a {
+	font-size: 2rem;
+	line-height: 3.75rem;
+	color: #ffffff;
+	text-decoration: none;
+}
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(1) .item:nth-child(3) a {
+	font-size: 2rem;
+	line-height: 3.75rem;
+	color: #ffffff;
+	text-decoration: none;
+}
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(2) .location_point_img  img {
+	width:1.5rem;
+}
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(2) .item:nth-child(2) {
+	font-size: 2.5rem;
+	line-height: 3.75rem;
+}
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(2) .item:nth-child(3) {
+	margin-top: 6.0rem;
+	font-size: 2.0rem;
+}
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(2) .item:nth-child(4) {
+	margin-top: 3.0rem;
+}
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(2) .item:nth-child(4) img
+{
+	margin-right: 2rem;
+}
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(2) .item:nth-child(4) img:nth-child(1),
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(2) .item:nth-child(4) img:nth-child(2),
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(2) .item:nth-child(4) img:nth-child(3)
+{
+	width: 2.5rem;
+}
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(2) .item:nth-child(4) img:nth-child(4)
+{
+	width: 1.25rem;
+}
+.section.Contact_US .table.our_contacts .tr
+.td:nth-child(2) .item:nth-child(4) img:nth-child(5)
+{
+	width: 2.25rem;
+}
+.section.Contact_US .table.our_contacts 
+.tr:nth-child(2) {
+	margin-top: 1.5rem;
+}
+
+/*MAIN SECTION Footer.................................*/
+
+.section.Footer.blockWithDinamicEffects.wrapper
+{
+	position: relative;
+/*	overflow:hidden;*/
+}
+.ellipse12{
+	width: 55rem;
+	height: 50rem;
+	background: url(../img/ellipse7-2.png)  no-repeat center top / cover;
+	position: absolute;
+/*	left: 7rem;*/
+	right: -27rem;
+	bottom: -10rem;
+	z-index: -2;
+	filter: blur(50px);
+	opacity: 0.57;
+}
+.ellipse13{
+	width: 85.6rem;
+	height: 93.2rem;
+	background: url(../img/ellipse10.png)  no-repeat center top / cover;
+	position: absolute;
+	right: -17rem;
+	bottom: -67.0rem;
+	z-index: -1;
+	opacity: 0.56;
+	filter: blur(50px);
+}
+.main_content
+{
+	display: flex;
+}
+.AllRights
+{
+	margin-left: 0.5rem;
+}
+.footer_menu
+{
+	display: flex;
+	width: 10.7rem;
+ 	justify-content: space-between;
+}
